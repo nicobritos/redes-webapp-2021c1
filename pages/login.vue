@@ -11,8 +11,6 @@
 </template>
 
 <script>
-import user from '~/plugins/user';
-
 export default {
     name: 'Home',
 
@@ -33,17 +31,13 @@ export default {
     methods: {
         validate () {
             if(this.$refs.form.validate()) {
-                if(this.email == "admin@mail.com" && this.password == "admin") {
-                    user.data = 'not null';
-                    this.$router.push("/posts")
-                } else {
-                    alert('Not valid')
-                }
+                this.login();
             }
         },
-        login(event) {
-            user.data = 'not null';
-            this.$router.push("posts")
+        async login(event) {
+            // let response = await this.$axios.$post();
+
+            this.$router.push("/posts")
         }
     }
 }
