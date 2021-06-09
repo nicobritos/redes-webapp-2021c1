@@ -1,23 +1,20 @@
-# Nicolas Britos' portfolio
+# the-wall
 
-Source code for my portfolio
+## Build Setup
 
-## Usage
-
-First we need to install the dependencies
 ```bash
-npm install
+# install dependencies
+$ yarn install
+
+# serve with hot reload at localhost:3000
+$ yarn dev
+
+# build for production and launch server
+$ yarn build
+$ yarn start
+
+# generate static project
+$ yarn generate
 ```
 
-If you want to develop and use the HRM:
-```bash
-npm run dev
-```
-
-Then, to generate the static files run:
-```bash
-npm run generate
-```
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
+For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).

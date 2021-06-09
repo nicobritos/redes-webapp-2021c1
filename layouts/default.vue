@@ -1,16 +1,17 @@
 <template>
-    <div>
-        <Nuxt/>
-    </div>
+    <section class="container">
+        <div>
+            <ToolBar/>
+            <nuxt/>
+        </div>
+    </section>
 </template>
 
-<script lang="ts">
-import {Component, Vue} from 'vue-property-decorator';
-
-@Component
-export default class Default extends Vue {
+<script>
+import ToolBar from '~/components/Toolbar.vue';
+export default {
+    components: {
+        ToolBar
+    }
 }
 </script>
-
-<style scoped>
-</style>
