@@ -1,6 +1,6 @@
 <!-- TODO: Deny access if not logged in -->
 <template>
-    <v-app dark>
+    <div>
         <div class="pa-8">
             <h1 class="title">The Wall</h1>
             <v-form @submit.prevent="post" class="my-8">
@@ -24,13 +24,14 @@
                 </div>
             </v-card>
         </div>
-    </v-app>
+    </div>
 </template>
 
 <script>
 export default {
     components: {
     },
+    middleware: 'authenticated',
     data() {
         return {
             post_text: ''

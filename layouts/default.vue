@@ -1,10 +1,10 @@
 <template>
-    <section class="container">
+    <v-app dark class="container">
         <div>
             <ToolBar/>
             <nuxt/>
         </div>
-    </section>
+    </v-app>
 </template>
 
 <script>
