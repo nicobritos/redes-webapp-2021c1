@@ -62,7 +62,6 @@ export default {
     build: {},
 
     render: {
-        injectScripts: false, // SSR only
         bundleRenderer: {
             runInNewContext: false
         }
