@@ -32,7 +32,7 @@ export default {
         },
         async login(event) {
             // let response = await this.$axios.$post();
-
+            this.$store.commit('logIn', this.username)
             this.$router.push("/posts")
         }
     }
