@@ -17,7 +17,7 @@ export default {
         this.$axios.setHeader('Access-Control-Allow-Origin', '*');
 
         if (process.server) {
-            const req = this.req;
+            const req = this.$req;
             const headers = (req && req.headers) ? Object.assign({}, req.headers) : {};
             const xForwardedFor = headers['x-forwarded-for'];
             let ip = Array.isArray(xForwardedFor) ? xForwardedFor[0] : (xForwardedFor || '').toString();
