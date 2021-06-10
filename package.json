@@ -13,7 +13,8 @@
         "core-js": "^3.9.1",
         "global": "^4.4.0",
         "module": "^1.2.5",
-        "nuxt": "^2.15.3"
+        "nuxt": "^2.15.3",
+        "nuxt-winston-log": "^1.2.0"
     },
     "devDependencies": {
         "@nuxtjs/vuetify": "^1.11.3",

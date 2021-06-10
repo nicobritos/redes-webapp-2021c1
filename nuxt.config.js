@@ -1,4 +1,6 @@
 import colors from 'vuetify/es5/util/colors';
+import { format, transports } from 'winston'
+const { combine, timestamp, label, prettyPrint } = format
 
 export default {
     // Global page headers: https://go.nuxtjs.dev/config-head
@@ -35,7 +37,8 @@ export default {
 
     // Modules: https://go.nuxtjs.dev/config-modules
     modules: [
-        '@nuxtjs/axios'
+        '@nuxtjs/axios',
+        'nuxt-winston-log'
     ],
 
     axios: {
@@ -83,5 +86,20 @@ export default {
 
     telemetry: false,
 
-    ssr: true
+    ssr: true,
+
+    winstonLog: {
+        // Setting to determine if filesystem is accessed to auto-create logPath.
+        // Set this to `false` for non-filesystem based logging setups.
+        autoCreateLogPath: true,
+
+        useDefaultLogger: true,
+
+        // Settings to determine if default handlers should be
+        // registered for requests and errors respectively.
+        // Set to `true` to skip request logging (level: info).
+        skipRequestMiddlewareHandler: true,
+        // Set to `true` to skip error logging (level: error).
+        skipErrorMiddlewareHandler: false
+    }
 };
