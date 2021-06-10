@@ -23,7 +23,7 @@ export default {
     methods: {
         async service() {
             this.state.isSending = true;
-            this.$axios.get('/process')
+            this.$axios.post('/process')
             .then((response) => {
                     this.state.isSending = false
             })
