@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="pa-8 text-center">
-            <v-btn color="success" @click="service">Run heavy service</v-btn>
+            <v-btn color="success" @click="service" :disabled="state.isSending">Run heavy service</v-btn>
         </div>
     </div>
 </template>
@@ -15,11 +15,22 @@ export default {
     },
 
     data: () => ({
+        state: {
+            isSending: false
+        }
     }),
 
     methods: {
         async service() {
-            await this.$axios.get('/process');
+            this.state.isSending = true;
+            await this.$axios.get('/process')
+            .then((response) => {
+                    this.state.isSending = false
+            })
+            .catch((error) => {
+                this.state.isSending = false
+                console.log(error)
+            });
         }
     }
 }
