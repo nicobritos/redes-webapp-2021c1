@@ -1,6 +1,6 @@
 <template>
-    <v-app dark class="container">
-        <div>
+    <v-app dark>
+        <div class="container">
             <ToolBar/>
             <nuxt/>
         </div>
@@ -12,6 +12,9 @@ import ToolBar from '~/components/Toolbar.vue';
 export default {
     components: {
         ToolBar
+    },
+    created() {
+        this.$axios.setHeader('Access-Control-Allow-Origin', '*');
     }
 }
 </script>

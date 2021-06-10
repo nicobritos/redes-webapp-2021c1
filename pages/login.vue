@@ -31,8 +31,14 @@ export default {
             }
         },
         async login(event) {
-            // let response = await this.$axios.$post();
-            this.$store.commit('logIn', this.username)
+            try {
+                await this.$axios.post('/login', { email: this.username, password: this.password });
+            } catch (e) {
+                alert('Invalid credentials');
+                return;
+            }
+
+            this.$store.commit('logIn', this.username);
             this.$router.push("/posts")
         }
     }
