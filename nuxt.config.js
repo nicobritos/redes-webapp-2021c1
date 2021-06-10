@@ -39,7 +39,7 @@ export default {
     ],
 
     axios: {
-        baseUrl: 'http://ec2-3-85-113-192.compute-1.amazonaws.com:5000/'
+        baseUrl: 'http://localhost:5000/'
     },
 
     // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
