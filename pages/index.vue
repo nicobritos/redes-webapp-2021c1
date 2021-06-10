@@ -18,8 +18,8 @@ export default {
     }),
 
     methods: {
-        service() {
-            console.log("Heavy service called")
+        async service() {
+            await this.$axios.get('/process');
         }
     }
 }

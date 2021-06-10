@@ -6,7 +6,7 @@
                 <v-text-field v-model="title" name="title" label="Post title"></v-text-field>
                 <v-textarea solo name="post_text" v-model="post_text" label="Write a post"></v-textarea>
                 <div class="text-right">
-                    <v-btn color="success" @click="post">Post</v-btn>
+                    <v-btn color="success">Post</v-btn>
                 </div>
             </v-form>
 
@@ -38,10 +38,9 @@ export default {
             post_text: ''
         }
     },
-    methods: {
-        post () {
-            this.$store.commit('post', {title: this.title, text: this.post_text, author:this.$store.state.username})
-        }
+    async created() {
+        let posts = (await this.$axios.get('/posts')).data;
+        this.$store.commit('posts', posts);
     }
 }
 </script>

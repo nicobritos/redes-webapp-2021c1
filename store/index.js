@@ -16,8 +16,8 @@ const createStore = () => {
                 state.loggedIn = false;
                 state.username = ''
             },
-            post(state, payload){
-                state.posts.unshift(payload)
+            posts(state, payload){
+                state.posts = payload;
             }
         },
         actions: {
