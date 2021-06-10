@@ -8,7 +8,6 @@
         <h1 v-else>
             {{ otherError }}
         </h1>
-        <!-- TODO: If logged, go to posts -->
         <NuxtLink to="/">
             Home page
         </NuxtLink>

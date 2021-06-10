@@ -26,7 +26,7 @@ export default {
 
     methods: {
         validate () {
-            if(this.$refs.form.validate()) {
+            if(this.$refs.form.validate()) { // TODO: check password
                 this.login();
             }
         },

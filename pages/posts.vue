@@ -1,4 +1,3 @@
-<!-- TODO: Deny access if not logged in -->
 <template>
     <div>
         <div class="pa-8">
