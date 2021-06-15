@@ -113,7 +113,9 @@ export default {
                 new WinstonLogStash({
                     mode: 'tcp',
                     host: '172.31.34.224',
-                    port: 28777
+                    port: 28777,
+                    trailingLineFeed: true,
+                    trailingLineFeedChar: '\n',
                 })
             ]
         },
