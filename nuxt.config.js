@@ -1,6 +1,8 @@
 import colors from 'vuetify/es5/util/colors';
 import { format, transports } from 'winston'
-const { combine, timestamp, label, prettyPrint } = format
+const { combine, timestamp, label, prettyPrint } = format;
+const WinstonLogStash = require('winston3-logstash-transport');
+import { resolve } from 'path';
 
 export default {
     // Global page headers: https://go.nuxtjs.dev/config-head
@@ -97,7 +99,24 @@ export default {
         // Set this to `false` for non-filesystem based logging setups.
         autoCreateLogPath: true,
 
-        useDefaultLogger: true,
+        useDefaultLogger: false,
+        loggerOptions: {
+            format: combine(
+                label({ label: 'Webapp' }),
+                timestamp(),
+                prettyPrint()
+            ),
+            transports: [
+                new transports.File({
+                    filename: resolve('./logs', 'info.log')
+                }),
+                new WinstonLogStash({
+                    mode: 'tcp',
+                    host: '172.31.34.224',
+                    port: 28777
+                })
+            ]
+        },
 
         // Settings to determine if default handlers should be
         // registered for requests and errors respectively.
